@@ -35,7 +35,7 @@ umi.use(signerIdentity(createSignerFromKeypair(umi, keypair)));
         let data: DataV2Args = {
             name: "Sir can I plz submit stilll",
             symbol: "PLZ",
-            uri: "https://gateway.lighthouse.storage/ipfs/bafkreidkkfppkqvrax4wilh6dgx3p2yctpoyw5v47v3i5l3fxukwtp4zmi",
+            uri: "https://res.cloudinary.com/dv46v5zat/image/upload/v1751547121/sir_plz_wkasjk.png",
             sellerFeeBasisPoints: 1,
             creators: null,
             collection: null,

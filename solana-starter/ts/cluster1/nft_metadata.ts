@@ -1,4 +1,4 @@
-import wallet from "../turbin3-wallet.json"
+import wallet from "./wallet/turbin-wallet.json"
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
 import { createGenericFile, createSignerFromKeypair, signerIdentity } from "@metaplex-foundation/umi"
 import { irysUploader } from "@metaplex-foundation/umi-uploader-irys"
@@ -17,27 +17,27 @@ umi.use(signerIdentity(signer));
         // Follow this JSON structure
         // https://docs.metaplex.com/programs/token-metadata/changelog/v1.0#json-structure
 
-        // const image = ???
-        // const metadata = {
-        //     name: "?",
-        //     symbol: "?",
-        //     description: "?",
-        //     image: "?",
-        //     attributes: [
-        //         {trait_type: '?', value: '?'}
-        //     ],
-        //     properties: {
-        //         files: [
-        //             {
-        //                 type: "image/png",
-        //                 uri: "?"
-        //             },
-        //         ]
-        //     },
-        //     creators: []
-        // };
-        // const myUri = ???
-        // console.log("Your metadata URI: ", myUri);
+        const image = "https://gateway.irys.xyz/G2oQNWCVEs5waGZaYZMhTjqAeBzdky5CdL8oCPd3ixFB";
+        const metadata = {
+            name: "Can i get part 2",
+            symbol: "part 2",
+            description: "Can i get part 2",
+            image: image,
+            attributes: [
+                {trait_type: 'type', value: 'png'}
+            ],
+            properties: {
+                files: [
+                    {
+                        type: "image/png",
+                        uri: image
+                    },
+                ]
+            },
+            creators: [signer.publicKey]
+        };
+        const myUri = await umi.uploader.uploadJson(metadata);
+        console.log("Your metadata URI: ", myUri);
     }
     catch(error) {
         console.log("Oops.. Something went wrong", error);
