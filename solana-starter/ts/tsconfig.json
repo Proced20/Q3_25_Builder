@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2020",
     "lib": ["es2020"],
+    "moduleResolution": "node",
     "module": "commonjs",
     "rootDir": "./",
     "resolveJsonModule": true,
@@ -11,5 +12,6 @@
     "strict": true,
     "noImplicitAny": true,
     "skipLibCheck": true
+    
   }
 }
